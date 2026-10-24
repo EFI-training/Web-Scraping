@@ -1,0 +1,108 @@
+# Collecting Data from the Web: Foundation of Webscraping
+
+This repository contains materials for the workshop “Collecting Data from the Web: Foundation of Web Scraping.”
+The workshop introduces participants to the fundamentals of web scraping for research, covering both conceptual and practical aspects. Examples are provided in R and Python, allowing participants to follow along in their preferred language.
+
+## Overview
+This intermediate workshop will teach you how to scrape data from the Internet using R and Python. 
+This is an intermediate-level course. Students must have a basic background in R/Pyhton . This includes understanding the basic data types in R/Python; how to install and load packages; and how to use functions, pipes, and apply/map functions.  
+
+The workshop is delivered in a single session with a **pre-reading.**
+
+## Compulsory pre-reading
+
+Please read **[Collecting Data from the Web: Legal and Ethical Foundations](Collecting%20Data%20from%20the%20Web%20Legal%20and%20Ethical%20Foundations.pdf)** before attending the workshop.
+
+The document introduces the main legal and ethical considerations involved in collecting web data, including copyright, terms of service, data protection and research ethics.
+
+**Before the session, please complete both exercises at the end of the document (pages 13–14).** We will discuss your answers at the beginning of the workshop, so brief notes for each question will be sufficient.
+
+#### Session 1 – Practical Web Scraping in R or Python
+
+This session first introduces key concepts and considerations before writing any code. Participants will:
+- Explore web page structures and how data is organised in HTML.
+- Use SelectorGadget to identify elements on a web page for extraction.
+
+This hands-on session then guides participants through scraping static websites. Participants can choose to work in either R or Python, with parallel code examples provided.
+
+## Scraping Websites with R (for Python, please scroll down)
+
+### Getting ready
+You'll need to install the SelectorGadget extension for the Chrome browser in addition to ensuring you have access to R/RStudio. You can use R/RStudio on the University's Noteable service, which requires no installation. You can also install R/Rstudio locally on your computer.
+
+#### Installing SelectorGadget
+1. Open the Chrome browser. If you don't have Chrome, you can install it [here](https://www.google.com/intl/en_uk/chrome/dr/download/?brand=GBSK&ds_kid=43700079594422197&gad_source=1&gclid=CjwKCAjw68K4BhAuEiwAylp3kjjhQbHyA1O0gttd5L0f0a48baOHb_zDWgZlWXotXEhTdnld7o1szRoCRSoQAvD_BwE&gclsrc=aw.ds).
+2. Log in to the Chrome browser with your Google account. If you don't have a Google account, you'll need to sign up for one.
+3. Follow [this link](https://chromewebstore.google.com/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en) to download the SelectorGadget browser extension.
+4. Make sure SelectorGadget is enabled in your Chrome extension toolbar by clicking on the 'Customize and control Google Chrome' icon in the top righthand corner of your browser pane. Mouse over to 'Extensions' on the dropdown menu and select 'Manage Extensions.' Make sure SelectorGadget is toggled 'on.'
+
+#### Accessing R On Noteable
+
+1. Open the login page [here](https://noteable.edina.ac.uk/login).
+2. Login with your EASE credentials.
+3. Select RStudio as a personal notebook server and press start.
+4. Go to File > New Project> Version Control > Git
+5. Copy and Paste this repository URL [https://github.com/DCS-training/web-scraping-R-2024](https://github.com/DCS-training/web-scraping-R-2024) as the Repository URL. (The Project directory name will be filled in automatically, but you can change it if you want your folder in Notable to have a different name).
+6. Decide where you'd like to store the folder. By default, it will be located in your home directory.
+7. Select 'Create Project'.
+   
+Congratulations! You have now pulled the content of this repository to your Notable server space.
+
+#### Installing R/RStudio locally
+1. Go to (https://www.r-project.org/)[https://www.r-project.org/]
+2. Go to the download link
+3. Choose the closest CRAN mirror (if you're in Edinburgh, select either Bristol or Imperial College London)
+4. Download the version compatible with your operating system (Windows/Mac/Linux)
+- For Windows: click on install R for the first time. Then download R for Windows and follow the installation widget. If you get stuck, follow this (video tutorial)[https://www.youtube.com/watch?v=GAGUDL-4aVw]
+- For Mac: download the most recent pkg file and follow the installation widget. If you get stuck, follow this (video tutorial)[https://www.youtube.com/watch?v=EmZqlcKkJMM]
+5. Once R is installed, you can install R studio (R interface)
+6. Go to (www.rstudio.com)[www.rstudio.com]
+7. Find the download page
+8. Download the version compatible with your operating system 
+
+## Scraping Websites with Python
+
+### Getting ready
+You'll need to install the SelectorGadget extension for the Chrome browser in addition to ensuring you have access to Jupyter Notebook. You can use Jupyter Notebook on the University's Noteable service, which requires no installation. You can also install Jupyter Notebook locally on your computer.
+
+#### Installing SelectorGadget
+1. Open the Chrome browser. If you don't have Chrome, you can install it [here](https://www.google.com/intl/en_uk/chrome/dr/download/?brand=GBSK&ds_kid=43700079594422197&gad_source=1&gclid=CjwKCAjw68K4BhAuEiwAylp3kjjhQbHyA1O0gttd5L0f0a48baOHb_zDWgZlWXotXEhTdnld7o1szRoCRSoQAvD_BwE&gclsrc=aw.ds).
+2. Log in to the Chrome browser with your Google account. If you don't have a Google account, you'll need to sign up for one.
+3. Follow [this link](https://chromewebstore.google.com/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en) to download the SelectorGadget browser extension.
+4. Make sure SelectorGadget is enabled in your Chrome extension toolbar by clicking on the 'Customize and control Google Chrome' icon in the top righthand corner of your browser pane. Mouse over to 'Extensions' on the dropdown menu and select 'Manage Extensions.' Make sure SelectorGadget is toggled 'on.'
+
+#### Accessing Python On Noteable
+
+1. Open the login page [here](https://noteable.edina.ac.uk/login).
+2. Login with your EASE credentials.
+3. Select Standard Python 3 as a personal notebook server and press start.
+4. Go to Git > Clone a Repository
+5. Copy and Paste this repository URL [https://github.com/DCS-training/web-scraping-R-2024](https://github.com/DCS-training/web-scraping-R-2024) as the Repository URL. (The Project directory name will be filled in automatically, but you can change it if you want your folder in Notable to have a different name).
+6. Click 'Clone'
+   
+Congratulations! You have now pulled the content of this repository to your Notable server space.
+
+#### Installing Jupyter Notebook locally
+1. Make sure you have Python installed. If you use Windows, I recommend installing [Anaconda](https://www.anaconda.com/download). For other operating systems, see [https://wiki.python.org/moin/BeginnersGuide/Download](https://wiki.python.org/moin/BeginnersGuide/Download).
+2. If you use Anaconda, install Jupyter via Anaconda (if it is not installed yet). If not, you can use `pip` to install Jupyter Notebook. Type the following into your terminal:
+```sh
+python3 -m pip install notebook
+```
+3. Launch your Jupyter Notebook either via Anaconda Navigator, or via your terminal:
+```sh
+jupyter notebook
+```
+
+## Additional resources
+[Reddit community](https://www.reddit.com/r/webscraping/) focused on web scraping
+
+Programming Historian, [Fetching and Parsing Data from the Web with OpenRefine](https://programminghistorian.org/en/lessons/fetch-and-parse-data-with-openrefine) and [Automated Downloading with Wget](https://programminghistorian.org/en/lessons/automated-downloading-with-wget)
+
+University of Southampton [Web Data Research Assistant](https://www.southampton.ac.uk/~lac/WebDataResearchAssistant/)
+
+[Public APIs](https://github.com/public-apis/public-apis) GitHub repo
+
+[Tutorial for browser automation](https://www.youtube.com/watch?v=HpL6EX2kjq4) in Python using Selenium
+
+
+
