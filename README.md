@@ -53,10 +53,10 @@ Congratulations! You have now pulled the content of this repository to your Nota
 2. Go to the download link
 3. Choose the closest CRAN mirror (if you're in Edinburgh, select either Bristol or Imperial College London)
 4. Download the version compatible with your operating system (Windows/Mac/Linux)
-- For Windows: click on install R for the first time. Then download R for Windows and follow the installation widget. If you get stuck, follow this (video tutorial)[https://www.youtube.com/watch?v=GAGUDL-4aVw]
-- For Mac: download the most recent pkg file and follow the installation widget. If you get stuck, follow this (video tutorial)[https://www.youtube.com/watch?v=EmZqlcKkJMM]
+- For Windows: click on install R for the first time. Then download R for Windows and follow the installation widget. If you get stuck, follow this [video tutorial](https://www.youtube.com/watch?v=GAGUDL-4aVw)
+- For Mac: download the most recent pkg file and follow the installation widget. If you get stuck, follow this [video tutorial](https://www.youtube.com/watch?v=EmZqlcKkJMM)
 5. Once R is installed, you can install R studio (R interface)
-6. Go to (www.rstudio.com)[www.rstudio.com]
+6. Go to [www.rstudio.com](www.rstudio.com)
 7. Find the download page
 8. Download the version compatible with your operating system 
 
