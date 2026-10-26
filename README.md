@@ -49,7 +49,7 @@ You'll need to install the SelectorGadget extension for the Chrome browser in ad
 Congratulations! You have now pulled the content of this repository to your Notable server space.
 
 #### Installing R/RStudio locally
-1. Go to (https://www.r-project.org/)[https://www.r-project.org/]
+1. Go to [https://www.r-project.org/](https://www.r-project.org)
 2. Go to the download link
 3. Choose the closest CRAN mirror (if you're in Edinburgh, select either Bristol or Imperial College London)
 4. Download the version compatible with your operating system (Windows/Mac/Linux)
