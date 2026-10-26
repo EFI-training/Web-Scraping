@@ -77,7 +77,7 @@ You'll need to install the SelectorGadget extension for the Chrome browser in ad
 2. Login with your EASE credentials.
 3. Select Standard Python 3 as a personal notebook server and press start.
 4. Go to Git > Clone a Repository
-5. Copy and Paste this repository URL [https://github.com/DCS-training/web-scraping-R-2024](https://github.com/DCS-training/web-scraping-R-2024) as the Repository URL. (The Project directory name will be filled in automatically, but you can change it if you want your folder in Notable to have a different name).
+5. Copy and Paste this repository URL [https://github.com/EFI-training/Web-Scraping] as the Repository URL. (The Project directory name will be filled in automatically, but you can change it if you want your folder in Notable to have a different name).
 6. Click 'Clone'
    
 Congratulations! You have now pulled the content of this repository to your Notable server space.
