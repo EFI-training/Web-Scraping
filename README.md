@@ -42,7 +42,7 @@ You'll need to install the SelectorGadget extension for the Chrome browser in ad
 2. Login with your EASE credentials.
 3. Select RStudio as a personal notebook server and press start.
 4. Go to File > New Project> Version Control > Git
-5. Copy and Paste this repository URL [https://github.com/DCS-training/web-scraping-R-2024](https://github.com/DCS-training/web-scraping-R-2024) as the Repository URL. (The Project directory name will be filled in automatically, but you can change it if you want your folder in Notable to have a different name).
+5. Copy and Paste this repository URL [[https://github.com/DCS-training/web-scraping-R-2024]](https://github.com/EFI-training/Web-Scraping/) as the Repository URL. (The Project directory name will be filled in automatically, but you can change it if you want your folder in Notable to have a different name).
 6. Decide where you'd like to store the folder. By default, it will be located in your home directory.
 7. Select 'Create Project'.
    
