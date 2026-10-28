@@ -1,7 +1,7 @@
 ---
 title: "Webscraping-R-2025"
 author: "Aybuke Atalay"
-date: "2025-11-04"
+date: "2026-10-30"
 output: html_document
 ---
 
@@ -11,7 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Web Scraping in R
 
-6 November 2025
 
 ## Setting up
 
@@ -20,7 +19,6 @@ Install the packages we will be using today...
 ```{r packages}
 install.packages('tidyverse')
 install.packages('rvest')
-install.packages("xml2")
 ```
 
 ...and import them.
@@ -284,6 +282,7 @@ We're going to repeat the process of writing a function to download the links fo
 
 ```{r Bottle Links}
 get.bottle.link <- function(x){
+  Sys.sleep(1)
   links <- read_html(x) %>%
     html_nodes('.name') %>%
     html_attr('href')
@@ -312,6 +311,7 @@ Now we have the links of each bottle page. We also want to get the name of each 
 
 ```{r Get names bottles}
 get.bottle.name <- function(x){
+  Sys.sleep(1)
   links <- read_html(x) %>%
     html_nodes('.name') %>%
     html_text()
@@ -344,6 +344,7 @@ TestLinks<-head(FullLinksBottle, 100)
 
 ```{r Get reviews}
 get.bottle.reviews <- function(x){
+  Sys.sleep(1)
   links <- read_html(x) %>%
     html_nodes('.simple-review-content p') %>%
     html_text()
