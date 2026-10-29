@@ -1,5 +1,5 @@
 ---
-title: "Webscraping-R-2025"
+title: "Webscraping-R-2026"
 author: "Aybuke Atalay"
 date: "2026-10-30"
 output: html_document
@@ -31,7 +31,7 @@ library(rvest)
 
 ## Rvest basics
 
-The preferred approach to web scraping in R is functional, and so we will write and map functions over our HTML.
+We will begin by using rvest to extract information from individual webpages. We will then move on to scraping multiple pages, using functions and purrr::map() to apply the same extraction procedure to a collection of URLs.
 
 In rvest, the typical approach is to figure out the task we want to perform, write a function to perform this task, and then map the function over a list of objects.
 
@@ -74,7 +74,16 @@ Print the variable to see what we've downloaded:
 page_logo
 ```
 
-Changing 'node' to 'nodes' will select all of the elements with the attribute and save them as a list object. Let's do this for the article title on the page, and print the list:
+Now lets try to get the first title
+
+```{r simple example, echo=TRUE}
+first_title <- webpage %>%
+  html_node('h3 a') %>%
+  html_text()
+first_title
+```
+
+Changing html_node() to html_nodes() allows us to select all matching HTML elements rather than just the first one. The result is an XML nodeset, from which we can extract text or attributes.
 
 ```{r titles, echo=TRUE}
 titles <- webpage %>%
@@ -210,30 +219,21 @@ cleanedNames
 
 Now, we have a list of the Scottish distilleries in the Connosr database. We might also be interested in seeing how community members have rated them.
 
-This time, lets  write a function to map over the webpage that scrapes the rating for each distillery using the HTML nodes:
 
 ```{r Rate Disitlleries}
-get.rate.dist <- function(x){ #define the function
-  links <- read_html(x) %>%
-    html_nodes('.not-small-phone') %>%
-    html_text()
-}
-
-RateDist <- map(whiskypage, get.rate.dist)#map the function onto the webpage
-
+RateDist <- read_html(whiskypage) %>%
+  html_nodes('.not-small-phone') %>%
+  html_text()
 ```
 
-We will need to flatten the object:
+
+
 
 ```{r Clean Rate}
-RateDistFlat <-flatten(RateDist)
-
-head(RateDistFlat)
-length(RateDistFlat)
-
-RateDist<-unlist(RateDistFlat)
-
+head(RateDist)
+length(RateDist)
 ```
+
 
 We'll also want to remove the 'Average Rating: ' appended to each distillery's rating:
 
@@ -260,14 +260,14 @@ First, save the URL for the page.
 
 ```
 
-Next, download the links by grabbing the HTML nodes for the names of distilleries and the corresponding HTML attributes. (Hint: we've already defined the function get.article.links in the previous step, so you'll just need to map it onto the new URL!)
+Next, download the links by grabbing the HTML nodes for the names of distilleries and the corresponding HTML attributes. 
 
 ```{r code here}
  
 ```
 
 
-According to the Connosr databased, how many whisky distilleries are in the new region you've explored?
+According to the Connosr database, how many whisky distilleries are in the new region you've explored?
 
 ```{r code here}
 
@@ -278,7 +278,7 @@ According to the Connosr databased, how many whisky distilleries are in the new 
 
 At this point in the lesson, we'll be scraping multiple pages for information. So, you may find that the blocks of code may take longer to run.
 
-We're going to repeat the process of writing a function to download the links for reviews for specific bottles
+We will write a function to download the links for reviews for specific bottles and use the 'map' function to navigate to each page.
 
 ```{r Bottle Links}
 get.bottle.link <- function(x){
@@ -296,12 +296,15 @@ BottleLinks <- map(FullLinks, get.bottle.link)
 The links are incomplete, with only part of the URL path. Let's fix this:
 
 ```{r Clean bottle links}
-#We need to use the flatten function to deal with this
-BottleLinksFlat <-flatten(BottleLinks)
-head(BottleLinksFlat)
-length(BottleLinksFlat)
-BottleLink <-unlist(BottleLinksFlat)
-FullLinksBottle<- paste0("https://www.connosr.com", BottleLink)
+# Convert the list of bottle links into a character vector
+BottleLink <- unlist(BottleLinks)
+
+head(BottleLink)
+length(BottleLink)
+
+# Complete the URLs
+FullLinksBottle <- paste0("https://www.connosr.com", BottleLink)
+
 head(FullLinksBottle)
 ```
 
